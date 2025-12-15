@@ -16,11 +16,11 @@ dependencies = [
     "python-json-logger>=4.0.0",
     "python-multipart>=0.0.20",
     "sqlmodel>=0.0.27",
+    "asyncpg>=0.31.0",
 ]
 
 [dependency-groups]
 dev = [
-    "asyncpg>=0.31.0",
     "factory-boy>=3.3.3",
     "httpx>=0.28.1",
     "ipykernel>=7.1.0",
