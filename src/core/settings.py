@@ -29,7 +29,7 @@ class Settings(BaseSettings):
 
     OPENROUTER_API_KEY: str
     OPENROUTER_API_BASE_URL: str
-    OPENROUTER_MODEL: str = "qwen/qwen3-4b-2507"
+    OPENROUTER_MODEL: str 
     OPENROUTER_TEMPERATURE: float = 0.0
 
     UVICORN_HOST: str = "0.0.0.0"

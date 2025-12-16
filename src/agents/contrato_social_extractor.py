@@ -149,7 +149,9 @@ async def contrato_social_extractor_node(
     correlation_id = (config.get("metadata") or {}).get("correlation_id")
 
     llm = build_llm(correlation_id=correlation_id)
-    llm_structured = llm.with_structured_output(ContratoSocialExtractionResult)
+    llm_structured = llm.with_structured_output(
+        ContratoSocialExtractionResult, method="function_calling"
+    )
 
     system = SystemMessage(
         content="""Você é um assistente especializado em extrair dados estruturados de CONTRATO SOCIAL (sociedade empresária limitada) no Brasil.

@@ -70,7 +70,9 @@ async def document_type_validator_node(
     correlation_id = (config.get("metadata") or {}).get("correlation_id")
 
     llm = build_llm(correlation_id=correlation_id)
-    llm_structured = llm.with_structured_output(ClassifierOutput)
+    llm_structured = llm.with_structured_output(
+        ClassifierOutput, method="function_calling"
+    )
 
     system = SystemMessage(
         content="""Você é um classificador de documentos empresariais/jurídicos brasileiros.
